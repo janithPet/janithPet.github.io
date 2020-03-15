@@ -1,0 +1,42 @@
+<!-- Header -->
+  <!-- <header id="header"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
+
+  {%- assign default_paths = site.pages | map: "path" -%}
+  {%- assign page_paths = site.header_pages | default: default_paths -%}
+
+  <div class="topnav">
+    <div class="topnav-left">
+      <a  href="{{ "/" | relative_url }}">{{ site.title }} </a>
+    </div>
+
+    <div class="topnav-right">
+      {%- if site.instagram_username -%}
+      <a href="https://instagram.com/{{ site.instagram_username| cgi_escape | escape }}">
+
+        <svg class="svg-icon"><use xlink:href="{{ '/assets/css/social_icons.svg#instagram' | relative_url }}"></use></svg>
+      </a>
+      {%- endif -%}
+      {%- if site.github_username -%}
+      <a href="https://github.com/{{ site.github_username| cgi_escape | escape }}">
+
+        <svg class="svg-icon"><use xlink:href="{{ '/assets/css/social_icons.svg#github' | relative_url }}"></use></svg>
+      </a>
+      {%- endif -%}
+
+      {%- for path in page_paths -%}
+        {%- assign my_page = site.pages | where: "path", path | first -%}
+        {%- if my_page.title -%}
+        <a href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
+        {%- endif -%}
+      {%- endfor -%}
+      {%- for post in site.posts -%}
+      <a href="{{ post.url | relative_url }}">Blog</a>
+      {%- endfor -%}
+      <a href="h">Projects</a>
+      <a href="mailto:{{site.email}}">Contact</a>
+    </div>
+  </div>
+  <!-- </header> -->
