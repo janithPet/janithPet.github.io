@@ -115,13 +115,10 @@ img {
   border-radius: 50%;
 	width: 250%;
 	height: 250%;
-	animation-name: fade;
-	animation-duration: 3s;
-	animation-timing-function: ease-in;
 }
 
 #profile_pic {
-	animation-duration: 2s;
+	animation-duration: 2.5s;
 	position:absolute;
 	bottom: 60%;
 	left: 38%;
