@@ -3,7 +3,7 @@ layout: default
 ---
 
 <div id="profile_pic">
-  <img src="/assets/images/profile.jpg" alt="Avatar">
+  <img src="/assets/images/profile.png" alt="Avatar">
 </div>
 <div class="content">
   <h1 >I am  </h1>
@@ -25,34 +25,35 @@ layout: default
     'am <strong>deeply</strong> curious.',
     'a <strong>researcher</strong>.',
     'an <strong>engineer</strong>.',
-
-
   ]
+
+  var pause_for_back = 500
+  var pause_for_forward = 150
   typewriter
     .pauseFor(750)
     .typeString(text[0])
-    .pauseFor(300)
+    .pauseFor(pause_for_back)
     .deleteChars(13)
     //
-    .pauseFor(750)
+    .pauseFor(pause_for_forward)
     .typeString(text[1])
-    .pauseFor(300)
+    .pauseFor(pause_for_back)
     .deleteChars(15)
     //
-    .pauseFor(750)
+    .pauseFor(pause_for_forward)
     .typeString(text[2])
-    .pauseFor(300)
+    .pauseFor(pause_for_back)
     .deleteChars(15)
     //
-    .pauseFor(750)
+    .pauseFor(pause_for_forward)
     .typeString(text[3])
-    .pauseFor(300)
+    .pauseFor(pause_for_back)
     .deleteChars(13)
 //
-    .pauseFor(750)
+    .pauseFor(pause_for_forward)
     .typeString(text[4])
-    .pauseFor(300)
-    .deleteChars(15)
+    .pauseFor(pause_for_back)
+    .deleteChars(16)
     .start()
 
 

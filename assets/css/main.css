@@ -22,7 +22,10 @@ color: rgba(225, 163, 63, 1); */
 		vertical-align: baseline;
 		possition: fixed;
 	}
-
+/*
+yellowcolor = rgba(225, 163, 63, 1);
+graycolor = #333;
+blackcolor = #171717; */
 body {
 	height: 100%;
 	width: 100%;
@@ -63,10 +66,14 @@ body {
 		animation-delay: 1s;
 	}
 
+	#typerwrite_text {
+
+	}
+
 	/* Add a black background color to the top navigation */
 	.topnav {
 		display: flex;
-	    background-color: #333;
+	    background-color: #171717;
 	    overflow: hidden;
 			height: 6vw;
 			text-align: left;
@@ -84,7 +91,7 @@ body {
 	.topnav-left a {
 		float: left;
 		font-weight: 700;
-		color: rgba(225, 163, 63, 1);
+		color: #333;
 		padding: 14px 16px;
 		text-decoration: none;
 		font-size: 2.5vw;
@@ -102,7 +109,7 @@ body {
 	.topnav-right a {
 		float: right;
 		font-weight: 400;
-		color: rgba(225, 163, 63, 1);
+		color: #333;
 		padding: 14px 16px;
 		text-decoration: none;
 		font-size: 1.25vw;
@@ -114,7 +121,7 @@ body {
     width: 16px;
     height: 16px;
     /* display: inline-block; */
-    fill: rgba(225, 163, 63, 1);
+    fill: #333;
     padding-right: 0px;
     /* vertical-align: text-top; */
 		/* margin-right: 0.5em; */
@@ -127,12 +134,10 @@ img {
 }
 
 #profile_pic {
-	animation-duration: 2.5s;
 	position:absolute;
-	bottom: 60%;
-	left: 38%;
-	width: 10vw;
-	height: 10vw;
+	left: 40%;
+	width: 30vw;
+	height: 20vw;
 }
 
 @@keyframes fade {
@@ -1747,7 +1752,7 @@ img {
 	}
 
 	body {
-		background: rgba(0, 0, 0, 1);
+		background: #171717;
 	}
 
 		/* body.is-loading *, body.is-loading *:before, body.is-loading *:after {
