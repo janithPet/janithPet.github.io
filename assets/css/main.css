@@ -51,7 +51,16 @@ body {
 		margin-bottom: 0.5em;
 		margin-left: 0.8em;
 		margin-right: 0.5em;
-		color: black;
+		color: #333;
+	}
+
+	#accented {
+		color: rgba(225, 163, 63, 1);
+	}
+
+  #delayed_text {
+		animation-duration: 1.5s;
+		animation-delay: 1s;
 	}
 
 	/* Add a black background color to the top navigation */
@@ -1738,7 +1747,7 @@ img {
 	}
 
 	body {
-		background: rgba(225, 163, 63, 1);
+		background: rgba(0, 0, 0, 1);
 	}
 
 		/* body.is-loading *, body.is-loading *:before, body.is-loading *:after {
@@ -1755,7 +1764,7 @@ img {
 /* Type */
 
 	body {
-		color: #999999;
+		color: #333;
 	}
 
 	html, input, select, textarea {
