@@ -136,6 +136,10 @@ body {
 		/* margin-right: 0.5em; */
 }
 
+.svg-icon:hover {
+	fill: rgba(225, 163, 63, 1);
+}
+
 img {
   border-radius: 50%;
 	width: 250%;
