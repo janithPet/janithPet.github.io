@@ -8,5 +8,53 @@ layout: default
 <div class="content">
   <h1 >I am  </h1>
   <h1 id="accented">{{ site.first_name }}. </h1>
-  <h1 class="animated fadeIn" id="delayed_text">I build things.</h1>
+  <h1 id="typerwrite_text"></h1>
 </div>
+
+<script type="text/javascript">
+  var app = document.getElementById('typerwrite_text');
+
+  var typewriter = new Typewriter(app, {
+    loop: true,
+    delay: 75,
+  });
+
+  var text = [
+    'I <strong>build</strong> things.',
+    '<strong>solve</strong> problems.',
+    'am <strong>deeply</strong> curious.',
+    'a <strong>researcher</strong>.',
+    'an <strong>engineer</strong>.',
+
+
+  ]
+  typewriter
+    .pauseFor(750)
+    .typeString(text[0])
+    .pauseFor(300)
+    .deleteChars(13)
+    //
+    .pauseFor(750)
+    .typeString(text[1])
+    .pauseFor(300)
+    .deleteChars(15)
+    //
+    .pauseFor(750)
+    .typeString(text[2])
+    .pauseFor(300)
+    .deleteChars(15)
+    //
+    .pauseFor(750)
+    .typeString(text[3])
+    .pauseFor(300)
+    .deleteChars(13)
+//
+    .pauseFor(750)
+    .typeString(text[4])
+    .pauseFor(300)
+    .deleteChars(15)
+    .start()
+
+
+
+</script>
