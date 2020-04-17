@@ -32,10 +32,6 @@
         <a href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
         {%- endif -%}
       {%- endfor -%}
-      {%- for post in site.posts -%}
-      <a href="{{ post.url | relative_url }}">Blog</a>
-      {%- endfor -%}
-      <a href="h">Projects</a>
       <a href="mailto:{{site.email}}">Contact</a>
     </div>
   </div>
