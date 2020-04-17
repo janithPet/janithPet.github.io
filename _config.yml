@@ -28,6 +28,7 @@ kramdown:
     default_lang: python
     css_class   : 'syntax'
 
+permalink: /:categories/:title/
 
 first_name: Janith
 last_name: Petangoda
@@ -43,6 +44,10 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
 github_username:  janithpet
 instagram_username: janithpet
+
+
+post_tags: [Python]
+project_tags: [Python, Javascript]
 # Build settings
 # theme: minima
 plugins:

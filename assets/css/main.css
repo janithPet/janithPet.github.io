@@ -30,6 +30,7 @@ blackcolor = #171717; */
 body {
 	height: 100%;
 	width: 100%;
+	background: #171717;
 }
 
 	div {
@@ -150,13 +151,6 @@ img {
 	height: 250%;
 }
 
-/* #profile_pic {
-	position:absolute;
-	left: 40%;
-	width: 30vw;
-	height: 20vw;
-} */
-
 #profile_pic {
 	animation-duration: 2.5s;
 	position:absolute;
@@ -220,12 +214,59 @@ pre code {
 	border-color: #d6d6d6;
 }
 
+.post-list-heading {
+	width: 100%;
+	text-align: center;
+}
 .post-list{
 	color: gray;
+	list-style-type: none;
 }
 
+.post-list-item{
+	margin: 2vw;
+}
+
+.post-list-item ul {
+	list-style-type: none;
+}
+
+.post-list-item li{
+	/* *display: inline; */
+	float: left;
+}
+
+.post-category-cart {
+
+}
+
+.category-name {
+	color: rgba(225, 163, 63, 1);
+	margin-bottom: 0;
+}
+.grid-container {
+	display: inline-grid;
+}
+
+/* .grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+} */
+
+.post-summary-list {
+
+}
+.post-summary-item{
+	width: 40vw;
+	padding: 10px;
+}
 .post-meta{
 	color: #333;
+	width: 100%;
+	text-align: center;
 }
 
 .post-list-heading{
@@ -234,11 +275,17 @@ pre code {
 
 .post-link{
 	color: lightgray;
+	margin-bottom: 0.5vw;
 }
 
 .post-title {
 	color: lightgray;
+	width: 100%;
+	text-align: center;
+	font-size: 3vw;
+	margin-bottom: 0;
 }
+
 .post-content {
 	color: gray;
 }
@@ -246,6 +293,9 @@ pre code {
 strong {
 	color: lightgray;
 }
+
+
+
 /* ..................................................................................................................................... */
 
 	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
@@ -1850,10 +1900,6 @@ strong {
 			min-width: 320px;
 		}
 
-	}
-
-	body {
-		background: #171717;
 	}
 
 		/* body.is-loading *, body.is-loading *:before, body.is-loading *:after {

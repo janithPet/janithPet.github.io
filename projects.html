@@ -6,22 +6,52 @@ permalink: /projects/
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 <div class='main_body'>
   {%- if site.posts.size > 0 -%}
-    <h2 class="post-list-heading">{{ page.list_title | default: "Blog Posts" }}</h2>
+    <h2 class="post-list-heading">{{ page.list_title | default: "Projects" }}</h2>
     <ul class="post-list">
-      {%- for post in site.categories.projects -%}
-      <li>
-        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
-        <h3>
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
-          </a>
-        </h3>
-        {%- if site.show_excerpts -%}
-          {{ post.excerpt }}
-        {%- endif -%}
+
+        {%- for project_tag in site.project_tags -%}
+
+        <li class="post-list-item">
+          {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+
+          <!-- category -->
+          <div class="grid-container">
+            <!-- category title -->
+            <div class='grid-item'>
+              <h3 class='category-name'>
+                {{ project_tag }}
+
+              </h3>
+            </div>
+            <div class='grid-item'>
+            <ul>
+            {%- for post in site.categories.projects -%}
+            {% assign post_type = post.type | downcase%}
+            {% assign project_type = project_tag | downcase%}
+
+            {%- if post_type == project_type -%}
+              <li>
+                <div class="post-summary-item">
+                  <span class="post-meta">{{ post.date | date: date_format }}</span>
+                  <h3 class='post-link'>
+                    <a class="post-link" href="{{ post.url | relative_url }}">
+                      {{ post.title | escape }}
+                    </a>
+                  </h3>
+                  {%- if site.show_excerpts -%}
+                    {{ post.excerpt }}
+                  {%- endif -%}
+                </div>
+              </li>
+            {%- endif -%}
+            {%- endfor -%}
+          </ul>
+          </div>
+        </div>
       </li>
-      {%- endfor -%}
+
+          {%- endfor -%}
+
     </ul>
   {%- endif -%}
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>

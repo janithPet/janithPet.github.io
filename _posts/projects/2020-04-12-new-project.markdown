@@ -1,8 +1,9 @@
 ---
 layout: post
-title:  "New Project"
+title:  "Python Project 2"
 date:   2020-04-12 21:19:24 +0000
-categories: projects
+type: 'python'
+categories: [projects, python]
 ---
 You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 
@@ -14,13 +15,30 @@ Where `YEAR` is a four-digit number, `MONTH` and `DAY` are both two-digit number
 
 Jekyll also offers powerful support for code snippets:
 
-''' ruby
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-'''
+{% highlight python %}
+class Graph():
+    def __init__(self,vertices):
+        self.graph = defaultdict(list)
+        self.V = vertices
+
+    def addEdge(self,u,v): # add directed edge from u to v.
+        self.graph[u].append(v)
+
+if __name__ == '__main__':
+    test_cases = int(input())
+    for cases in range(test_cases) :
+        N,E = map(int,input().strip().split())
+        g = Graph(N)
+        edges = list(map(int,input().strip().split()))
+
+        for i in range(0,len(edges),2):
+            u,v = edges[i],edges[i+1]
+            g.addEdge(u,v) # add an undirected edge from u to v
+            g.addEdge(v,u)
+
+        dfs(g.graph,N) # print bfs of graph
+        print()
+{% endhighlight %}
 
 Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
 
