@@ -239,6 +239,9 @@ pre code {
 	font-family: "Courier New", monospace;
 }
 
+.highlight {
+	background-color: transparent;
+}
 #header code {
 	background: rgba(255, 255, 255, 0.075);
 	border-color: rgba(255, 255, 255, 0.25);
@@ -417,6 +420,7 @@ strong {
 		-moz-box-sizing: border-box;
 		-webkit-box-sizing: border-box;
 		box-sizing: border-box;
+		width: 45vw;
 	}
 
 	.row:after, .row:before {
@@ -428,10 +432,12 @@ strong {
 
 	.row.uniform > * > :first-child {
 		margin-top: 0;
+		flex: 1;
 	}
 
 	.row.uniform > * > :last-child {
 		margin-bottom: 0;
+		margin-left: 20px;
 	}
 
 	.row.\30 \25 > * {

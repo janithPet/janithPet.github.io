@@ -15,30 +15,58 @@ Where `YEAR` is a four-digit number, `MONTH` and `DAY` are both two-digit number
 
 Jekyll also offers powerful support for code snippets:
 
-{% highlight python %}
-class Graph():
-    def __init__(self,vertices):
-        self.graph = defaultdict(list)
-        self.V = vertices
 
-    def addEdge(self,u,v): # add directed edge from u to v.
-        self.graph[u].append(v)
+<div class="row">
+  <div>
+  Function wrapper
+  {% highlight python %}
+  import time
+  from typing import Callable, List, Dict
 
-if __name__ == '__main__':
-    test_cases = int(input())
-    for cases in range(test_cases) :
-        N,E = map(int,input().strip().split())
-        g = Graph(N)
-        edges = list(map(int,input().strip().split()))
+  def timer(f: Callable, args: List = [], kwargs: Dict = {}):
+    start_time = time.time()
+    rv  = f(*args, **kwargs) #run original function
+    total_time = time.time() - start_time #calculate time taken
+    print(f'{f.__name__} took {total_time}s to complete')
 
-        for i in range(0,len(edges),2):
-            u,v = edges[i],edges[i+1]
-            g.addEdge(u,v) # add an undirected edge from u to v
-            g.addEdge(v,u)
+    return rv
 
-        dfs(g.graph,N) # print bfs of graph
-        print()
-{% endhighlight %}
+  if __name__ == '__main__':
+      def double(x=10):
+        return 2*x
+
+      timer(double, [2]) # -> double took 4.0531158447265625e-06s to complete
+  {% endhighlight %}
+  </div>
+  <div>
+  <!-- ** -->
+  Decorator
+  {% highlight python %}
+  import time
+  from typing import Callable
+
+  def timer(f: Callable):
+    def wrapper(*args, **kwargs):
+      start_time = time.time()
+      rv  = f(*args, **kwargs) #run original function
+      total_time = time.time() - start_time #calculate time taken
+      print(f'{f.__name__} took {total_time}s to complete')
+
+      return rv
+    return wrapper
+
+  if __name__ == '__main__':
+    @timer
+    def double(x=10):
+      return 2*x
+
+    double(2) # -> double took 4.0531158447265625e-06s to complete
+  {% endhighlight %}
+  <!-- ** -->
+  </div>
+</div>
+
+
 
 Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
 
