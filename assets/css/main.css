@@ -332,6 +332,7 @@ pre code {
 	color: #333;
 	width: 100%;
 	text-align: center;
+	font-size: 2vw;
 }
 
 .post-list-heading{
@@ -347,7 +348,7 @@ pre code {
 	color: lightgray;
 	width: 100%;
 	text-align: center;
-	font-size: 3vw;
+	font-size: 3.5vw;
 	margin-bottom: 0;
 }
 
