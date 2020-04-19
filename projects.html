@@ -9,11 +9,9 @@ permalink: /projects/
     <h2 class="post-list-heading">{{ page.list_title | default: "Projects" }}</h2>
     <ul class="post-list">
 
-        {%- for project_tag in site.project_tags -%}
-
+      {%- for project_tag in site.project_tags -%}
         <li class="post-list-item">
           {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-
           <!-- category -->
           <div class="grid-container">
             <!-- category title -->
@@ -24,14 +22,14 @@ permalink: /projects/
               </h3>
             </div>
             <div class='grid-item'>
-            <ul>
+            <ul id="internal_list", class="internal_list_large">
             {%- for post in site.categories.projects -%}
             {% assign post_type = post.type | downcase%}
             {% assign project_type = project_tag | downcase%}
 
             {%- if post_type == project_type -%}
-              <li>
-                <div class="post-summary-item">
+              <li id="internal_list_item", class="internal_list_item_large">
+                <div class="project-summary-item">
                   <span class="post-meta">{{ post.date | date: date_format }}</span>
                   <h3 class='post-link'>
                     <a class="post-link" href="{{ post.url | relative_url }}">
@@ -50,10 +48,49 @@ permalink: /projects/
         </div>
       </li>
 
-          {%- endfor -%}
+    {%- endfor -%}
 
     </ul>
-  {%- endif -%}
-  <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
-  </div>
+ {%- endif -%}
+ <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+</div>
 </article>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    if($(window).width() > 600) {
+      $("ul[id='internal_list']").each(function (i, el) {
+        $(this).addClass('internal_list_large')
+      });
+      $("ul[id='internal_list']").each(function (i, el) {
+       $(this).removeClass('internal_list_small');
+      });
+    }else{
+      $("ul[id='internal_list']").each(function (i, el) {
+       $(this).addClass('internal_list_small');
+      });
+      $("ul[id='internal_list']").each(function (i, el) {
+       $(this).removeClass('internal_list_large');
+      });
+    }
+})
+
+
+  $(window).on('resize', function() {
+    if($(window).width() > 600) {
+      $("ul[id='internal_list']").each(function (i, el) {
+        $(this).addClass('internal_list_large')
+      });
+      $("ul[id='internal_list']").each(function (i, el) {
+       $(this).removeClass('internal_list_small');
+      });
+    }else{
+      $("ul[id='internal_list']").each(function (i, el) {
+       $(this).addClass('internal_list_small');
+      });
+      $("ul[id='internal_list']").each(function (i, el) {
+       $(this).removeClass('internal_list_large');
+      });
+    }
+})
+</script>

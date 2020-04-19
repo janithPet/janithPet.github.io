@@ -151,13 +151,20 @@ img {
 	height: 250%;
 }
 
-#profile_pic {
-	animation-duration: 2.5s;
+.profile_pic_large {
 	position:absolute;
 	bottom: 60%;
 	left: 50vw;
 	width: 15vw;
 	height: 15vw;
+}
+
+.profile_pic_small {
+	position:absolute;
+	bottom: 60%;
+	left: 25vw;
+	width: 20vw;
+	height: 20vw;
 }
 
 @@keyframes fade {
@@ -217,23 +224,37 @@ pre code {
 .post-list-heading {
 	width: 100%;
 	text-align: center;
+	font-size: 3vw;
 }
 .post-list{
 	color: gray;
 	list-style-type: none;
+	-webkit-padding-start: 0;
 }
 
 .post-list-item{
 	margin: 2vw;
 }
 
-.post-list-item ul {
+.internal_list_large {
 	list-style-type: none;
+	padding-left: 3vw;
+	padding-top: 1vw;
+	font-size: 15px;
 }
 
-.post-list-item li{
+.internal_list_small {
+	list-style-type: none;
+	padding-left: 0vw;
+	padding-top: 1vw;
+	font-size: 10px;
+	line-height: 16.5px;
+}
+
+.internal_list_item_large {
 	/* *display: inline; */
 	float: left;
+	padding: 0;
 }
 
 .post-category-cart {
@@ -243,7 +264,9 @@ pre code {
 .category-name {
 	color: rgba(225, 163, 63, 1);
 	margin-bottom: 0;
+	font-size: 15px;
 }
+
 .grid-container {
 	display: inline-grid;
 }
@@ -262,6 +285,11 @@ pre code {
 .post-summary-item{
 	width: 40vw;
 	padding: 10px;
+}
+
+.project-summary-item{
+	width: 80vw;
+	padding: 0px;
 }
 .post-meta{
 	color: #333;

@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<div id="profile_pic">
+<div id="profile_pic" class='profile_pic_large'>
   <img src="/assets/images/profile.png" alt="Avatar">
 </div>
 <div class="content">
@@ -56,6 +56,40 @@ layout: default
     .deleteChars(16)
     .start()
 
+    $(document).ready(function() {
+      if($(window).width() > 600) {
+        $("div[id='profile_pic']").each(function (i, el) {
+          $(this).addClass('profile_pic_large')
+        });
+        $("div[id='profile_pic']").each(function (i, el) {
+         $(this).removeClass('profile_pic_small');
+        });
+      }else{
+        $("div[id='profile_pic']").each(function (i, el) {
+         $(this).addClass('profile_pic_small');
+        });
+        $("div[id='profile_pic']").each(function (i, el) {
+         $(this).removeClass('profile_pic_large');
+        });
+      }
+    })
 
+    $(window).on('resize', function() {
+      if($(window).width() > 600) {
+        $("div[id='profile_pic']").each(function (i, el) {
+          $(this).addClass('profile_pic_large')
+        });
+        $("div[id='profile_pic']").each(function (i, el) {
+         $(this).removeClass('profile_pic_small');
+        });
+      }else{
+        $("div[id='profile_pic']").each(function (i, el) {
+         $(this).addClass('profile_pic_small');
+        });
+        $("div[id='profile_pic']").each(function (i, el) {
+         $(this).removeClass('profile_pic_large');
+        });
+      }
+    })
 
 </script>
