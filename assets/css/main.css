@@ -239,7 +239,7 @@ pre code {
 .project_internal_list_large {
 	list-style-type: none;
 	padding-left: 3vw;
-	padding-top: 1vw;
+	padding-top: 10px;
 	font-size: 15px;
 	width: 80vw;
 }
@@ -247,7 +247,7 @@ pre code {
 .post_internal_list_large {
 	list-style-type: none;
 	padding-left: 3vw;
-	padding-top: 1vw;
+	padding-top: 10px;
 	font-size: 15px;
 	/* width: 42vw; */
 }
@@ -274,7 +274,7 @@ pre code {
 .category-name {
 	color: rgba(225, 163, 63, 1);
 	margin-bottom: 0;
-	font-size: 15px;
+	font-size: 20px;
 }
 
 .grid-container {
@@ -286,7 +286,7 @@ pre code {
 
 .post-summary-item-large{
 	width: 40vw;
-	padding: 0px;
+	padding-right: 30px;
 }
 
 .post-summary-item-small{
