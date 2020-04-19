@@ -14,7 +14,11 @@
       <a  href="{{ "/" | relative_url }}">{{ site.title }} </a>
     </div>
 
-    <div class="topnav-right">
+    <div id="topnav-right", class="topnav-right">
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+
       {%- if site.instagram_username -%}
       <a href="https://instagram.com/{{ site.instagram_username| cgi_escape | escape }}">
 
@@ -37,4 +41,16 @@
       <a href="mailto:{{site.email}}">Contact</a>
     </div>
   </div>
+
+  <script>
+    function myFunction() {
+
+      var x = document.getElementById("topnav-right");
+      if (x.className === "topnav-right") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav-right";
+      }
+    }
+</script>
   <!-- </header> -->
