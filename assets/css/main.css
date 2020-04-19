@@ -131,7 +131,7 @@ body {
 		color: rgba(225, 163, 63, 1);
 	}
 
-	.topnav-right .icon {
+	/* .topnav-right .icon {
   display: none;
 	font-size: 4vw;
 }
@@ -156,7 +156,7 @@ body {
 		float: right;
 		display: block;
 	}
-}
+} */
 
 	.svg-icon {
 		viewBox: 0, 0, 16, 16;
