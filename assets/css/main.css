@@ -236,14 +236,24 @@ pre code {
 	margin: 2vw;
 }
 
-.internal_list_large {
+.project_internal_list_large {
 	list-style-type: none;
 	padding-left: 3vw;
 	padding-top: 1vw;
 	font-size: 15px;
+	width: 80vw;
+}
+
+.post_internal_list_large {
+	list-style-type: none;
+	padding-left: 3vw;
+	padding-top: 1vw;
+	font-size: 15px;
+	/* width: 42vw; */
 }
 
 .internal_list_small {
+	width: 85vw;
 	list-style-type: none;
 	padding-left: 0vw;
 	padding-top: 1vw;
@@ -271,24 +281,20 @@ pre code {
 	display: inline-grid;
 }
 
-/* .grid-item {
-  background-color: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(0, 0, 0, 0.8);
-  padding: 20px;
-  font-size: 30px;
-  text-align: center;
-} */
-
 .post-summary-list {
-
 }
-.post-summary-item{
+
+.post-summary-item-large{
 	width: 40vw;
-	padding: 10px;
+	padding: 0px;
+}
+
+.post-summary-item-small{
+	/* width: 90vw; */
+	padding: 0px;
 }
 
 .project-summary-item{
-	width: 80vw;
 	padding: 0px;
 }
 .post-meta{

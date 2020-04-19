@@ -22,14 +22,14 @@ permalink: /projects/
               </h3>
             </div>
             <div class='grid-item'>
-            <ul id="internal_list", class="internal_list_large">
+            <ul id="internal_list", class="project_internal_list_large">
             {%- for post in site.categories.projects -%}
             {% assign post_type = post.type | downcase%}
             {% assign project_type = project_tag | downcase%}
 
             {%- if post_type == project_type -%}
               <li id="internal_list_item", class="internal_list_item_large">
-                <div class="project-summary-item">
+                <div class="project-summary-item-large">
                   <span class="post-meta">{{ post.date | date: date_format }}</span>
                   <h3 class='post-link'>
                     <a class="post-link" href="{{ post.url | relative_url }}">
@@ -60,7 +60,7 @@ permalink: /projects/
   $(document).ready(function() {
     if($(window).width() > 600) {
       $("ul[id='internal_list']").each(function (i, el) {
-        $(this).addClass('internal_list_large')
+        $(this).addClass('project_internal_list_large')
       });
       $("ul[id='internal_list']").each(function (i, el) {
        $(this).removeClass('internal_list_small');
@@ -70,7 +70,7 @@ permalink: /projects/
        $(this).addClass('internal_list_small');
       });
       $("ul[id='internal_list']").each(function (i, el) {
-       $(this).removeClass('internal_list_large');
+       $(this).removeClass('project_internal_list_large');
       });
     }
 })
@@ -79,7 +79,7 @@ permalink: /projects/
   $(window).on('resize', function() {
     if($(window).width() > 600) {
       $("ul[id='internal_list']").each(function (i, el) {
-        $(this).addClass('internal_list_large')
+        $(this).addClass('project_internal_list_large')
       });
       $("ul[id='internal_list']").each(function (i, el) {
        $(this).removeClass('internal_list_small');
@@ -89,7 +89,7 @@ permalink: /projects/
        $(this).addClass('internal_list_small');
       });
       $("ul[id='internal_list']").each(function (i, el) {
-       $(this).removeClass('internal_list_large');
+       $(this).removeClass('project_internal_list_large');
       });
     }
 })

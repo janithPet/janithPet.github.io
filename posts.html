@@ -10,10 +10,8 @@ permalink: /posts/
       <ul class="post-list">
 
           {%- for project_tag in site.post_tags -%}
-
           <li class="post-list-item">
             {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-
             <!-- category -->
             <div class="grid-container">
               <!-- category title -->
@@ -24,14 +22,14 @@ permalink: /posts/
                 </h3>
               </div>
               <div class='grid-item'>
-              <ul>
+              <ul id="internal_list", class="post_internal_list_large">
               {%- for post in site.categories.posts -%}
               {% assign post_type = post.type | downcase%}
               {% assign project_type = project_tag | downcase%}
 
               {%- if post_type == project_type -%}
-                <li>
-                  <div class="post-summary-item">
+                <li id="internal_list_item", class="internal_list_item_large">
+                  <div id="internal_div_item", class="project-summary-item-large">
                     <span class="post-meta">{{ post.date | date: date_format }}</span>
                     <h3>
                       <a class="post-link" href="{{ post.url | relative_url }}">
@@ -57,3 +55,70 @@ permalink: /posts/
     <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
     </div>
 </article>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    if($(window).width() > 600) {
+      $("ul[id='internal_list']").each(function (i, el) {
+        $(this).addClass('post_internal_list_large')
+      });
+      $("ul[id='internal_list']").each(function (i, el) {
+       $(this).removeClass('internal_list_small');
+      });
+
+      $("div[id='internal_div_item']").each(function (i, el) {
+        $(this).addClass('post-summary-item-large')
+      });
+      $("div[id='internal_div_item']").each(function (i, el) {
+       $(this).removeClass('post-summary-item-small');
+      });
+    }else{
+      $("ul[id='internal_list']").each(function (i, el) {
+       $(this).addClass('internal_list_small');
+      });
+      $("ul[id='internal_list']").each(function (i, el) {
+       $(this).removeClass('post_internal_list_large');
+      });
+
+      $("div[id='internal_div_item']").each(function (i, el) {
+        $(this).addClass('post-summary-item-small')
+      });
+      $("div[id='internal_div_item']").each(function (i, el) {
+       $(this).removeClass('post-summary-item-large');
+      });
+    }
+})
+
+
+  $(window).on('resize', function() {
+    if($(window).width() > 600) {
+      $("ul[id='internal_list']").each(function (i, el) {
+        $(this).addClass('post_internal_list_large')
+      });
+      $("ul[id='internal_list']").each(function (i, el) {
+       $(this).removeClass('internal_list_small');
+      });
+
+      $("div[id='internal_div_item']").each(function (i, el) {
+        $(this).addClass('post-summary-item-large')
+      });
+      $("div[id='internal_div_item']").each(function (i, el) {
+       $(this).removeClass('post-summary-item-small');
+      });
+    }else{
+      $("ul[id='internal_list']").each(function (i, el) {
+       $(this).addClass('internal_list_small');
+      });
+      $("ul[id='internal_list']").each(function (i, el) {
+       $(this).removeClass('post_internal_list_large');
+      });
+
+      $("div[id='internal_div_item']").each(function (i, el) {
+        $(this).addClass('post-summary-item-small')
+      });
+      $("div[id='internal_div_item']").each(function (i, el) {
+       $(this).removeClass('post-summary-item-large');
+      });
+    }
+})
+</script>
