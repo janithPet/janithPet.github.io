@@ -13,7 +13,7 @@ layout: default
       {%- if page.author -%}
         • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>
       {%- endif -%}</p>
-  <div class="post-content e-content" itemprop="articleBody">
+  <div id="post_content", class="post-content-large e-content" itemprop="articleBody">
     {{ content }}
   </div>
 
@@ -24,3 +24,24 @@ layout: default
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
   </div>
 </article>
+
+
+<script type="text/javascript">
+  $(window).on('load resize', function() {
+    if($(window).width() > 600) {
+      $("div[id='post_content']").each(function (i, el) {
+        $(this).addClass('post-content-large')
+      });
+      $("div[id='post_content']").each(function (i, el) {
+       $(this).removeClass('post-content-small');
+      });
+    }else{
+      $("div[id='post_content']").each(function (i, el) {
+       $(this).addClass('post-content-small');
+      });
+      $("div[id='post_content']").each(function (i, el) {
+       $(this).removeClass('post-content-big');
+      });
+    }
+  })
+</script>

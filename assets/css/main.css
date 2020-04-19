@@ -348,10 +348,15 @@ pre code {
 	margin-bottom: 0;
 }
 
-.post-content {
+.post-content-large {
 	color: gray;
 }
 
+.post-content-small {
+	color: gray;
+	font-size: 10px;
+	line-height: 16.5px;
+}
 strong {
 	color: lightgray;
 }
