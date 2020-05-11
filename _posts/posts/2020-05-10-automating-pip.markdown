@@ -158,7 +158,7 @@ Of course, manually have to copy this code everytime you install a virtual envir
 We will assume that this shell script is saved in `~/shell_scripts/<script name>.sh`. You
 This shell script will take 2 optional arguments, the path to the `venv` of the virtual environment, and the path to the `requirements.txt` file. These will be passed in with flags `-p` and `-r` respectively. By default, we will assume that this script is called from the projects folder, from where `virtualenv venv` was called, and that our virtual environment is called `venv` and the requirements file is called `requirements.txt`. The following code will parse these arguments and set to default values.
 
-```
+{% highlight bash %}
 #!/bin/bash
 #Helper function to kill program with message
 die () {
@@ -184,7 +184,7 @@ done
 #get absolute paths
 path_to_venv="$(cd "$(dirname "$1")"; pwd)/$(basename "$path_to_venv")"
 path_to_req="$(cd "$(dirname "$1")"; pwd)/$(basename "$path_to_req")"
-```
+{% endhighlight %}
 
 Note that we can pass in relative paths if necessary. The final 2 lines of code here will extract the absolute paths from these.
 
