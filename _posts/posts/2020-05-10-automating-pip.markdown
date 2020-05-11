@@ -6,7 +6,7 @@ type: 'Automation'
 categories: posts
 ---
 
-My friend told me the other day, that he would like his `requirements.txt` file to automatically update whenever he runs `pip install` or `pip uninstall`. I agreed with him, that this would be quite useful; so I sat down, had a cup of coffee and wrote a shell script that you can run after creating a virtual environment. This script will rewrite `pip` inside your virtual environment so that it will do the above, whenever a new package is installed, or uninstalled. I will describe this script below; you can find the Github repo that contains the script and its associated files [here](https://github.com/janithPet/bash/tree/master/upgradevenv.)
+My friend told me the other day, that he would like his `requirements.txt` file to automatically update whenever he runs `pip install` or `pip uninstall`. I agreed with him, that this would be quite useful; so I sat down, had a cup of coffee and wrote a shell script that you can run after creating a virtual environment. This script will rewrite `pip` inside your virtual environment so that it will do the above, whenever a new package is installed, or uninstalled. I will describe this script below; you can find the Github repo that contains the script and its associated files [here](https://github.com/janithPet/bash/tree/master/upgradevenv).
 
 ## Virtual Environments
 
@@ -227,3 +227,5 @@ Following this, we replace `~/project/venv/bin/pip` with this temporary file usi
 Now, after we run `virtualenv venv` in our projects folder, we can run `~/shell_scripts/<script name>.sh` [(after making it executable)](https://medium.com/@peey/how-to-make-a-file-executable-in-linux-99f2070306b5) to automatically update the `pip` file with our upgraded version.
 
 As a conclusion, you can create an alias in `~/.bash_profile` (MacOS) or `~/.bash_rc` (Ubuntu) to call ~/shell_scripts/<script name>.sh` from anywhere. In my case, this is done by adding `alias upgradevenv="/<path_to_script_folder>/upgradevenv.sh"`.
+
+The code in the [Github repo](https://github.com/janithPet/bash/tree/master/upgradevenv) is slightly different, as some changes were made for ease of exposition.
