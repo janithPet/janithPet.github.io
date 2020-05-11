@@ -30,7 +30,7 @@ permalink: /posts/
               {%- if post_type == project_type -%}
                 <li id="internal_list_item", class="internal_list_item_large">
                   <div id="internal_div_item", class="project-summary-item-large">
-                    <span class="post-meta">{{ post.date | date: date_format }}</span>
+                    <span class="post-meta-summary">{{ post.date | date: date_format }}</span>
                     <h3>
                       <a class="post-link" href="{{ post.url | relative_url }}">
                         {{ post.title | escape }}
